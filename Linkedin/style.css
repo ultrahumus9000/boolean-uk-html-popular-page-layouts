@@ -1,0 +1,143 @@
+* {
+  font-family: sans-serif;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.head {
+  padding-left: 0px;
+  background-color: rgba(201, 176, 176, 0.8);
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.head p {
+  border: 0px;
+  color: grey;
+  margin: 3px;
+  background-color: #eef3f8;
+  width: 200px;
+  padding: 6px;
+  text-align: left;
+}
+
+.head p,
+nav {
+  display: inline-block;
+}
+
+nav a {
+  text-decoration: none;
+  color: gray;
+  padding: 10px;
+}
+
+.outside-container {
+  display: grid;
+  grid-column: 70%;
+  justify-content: center;
+}
+.container {
+  display: grid;
+  grid-template:
+    " left main right " 1fr/
+    200px 400px 200px;
+  height: 100vh;
+  width: 70vm;
+  column-gap: 15px;
+}
+
+.left {
+  grid-area: left;
+
+  display: grid;
+  grid-template:
+    "left-top" 200px
+    "left-middle" 200px
+    "left-bottom" 1fr/
+    200px;
+  gap: 15px;
+}
+.left-top {
+  grid-area: left-top;
+  border: 5px solid coral;
+  background-color: rgb(210, 210, 225);
+}
+.left-middle {
+  grid-area: left-middle;
+  border: 5px solid coral;
+  background-color: rgb(163, 163, 221);
+}
+.left-bottom {
+  grid-area: left-bottom;
+  border: 5px solid coral;
+  background-color: rgb(163, 163, 221);
+}
+
+.right {
+  grid-area: right;
+  display: grid;
+  grid-template:
+    "right-top" 200px
+    "right-middle" 300px
+    "right-bottom" 1fr/
+    200px;
+  gap: 15px;
+}
+.right-top {
+  grid-area: right-top;
+  border: 5px solid coral;
+  background-color: rgb(213, 63, 213);
+}
+.right-middle {
+  grid-area: right-middle;
+  border: 5px solid coral;
+  background-color: rgb(213, 63, 213);
+}
+.right-bottom {
+  grid-area: right-bottom;
+  border: 5px solid coral;
+  background-color: rgb(213, 63, 213);
+}
+
+.main {
+  grid-area: main;
+  display: grid;
+  grid-template:
+    "main-top" 200px
+    "main-bottom" 1fr/
+    400px;
+  gap: 15px;
+}
+.main-top {
+  grid-area: main-top;
+  background-color: rgb(193, 158, 163);
+  border: 5px solid coral;
+}
+.main-bottom {
+  grid-area: .main-bottom;
+  background-color: rgb(193, 158, 163);
+  border: 5px solid coral;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    grid-template:
+      "main right" 1fr/
+      400px 200px;
+  }
+  .left {
+    display: none;
+  }
+  @media screen and (max-width: 600px) {
+    .container {
+      grid-template:
+        "main" 1fr/
+        400px;
+    }
+    .right {
+      display: none;
+    }
+  }
+}
